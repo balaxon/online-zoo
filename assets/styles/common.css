@@ -433,7 +433,7 @@ form:valid .footer_email_button:active {
 
 /*----------------------------------------media----------------------------------------*/
 
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
 
     .wrapper {
         width: 940px;
