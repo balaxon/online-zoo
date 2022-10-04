@@ -341,7 +341,7 @@ input[type="radio"]:checked {
     display: none;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     
     header {
         margin-bottom: 0px;
