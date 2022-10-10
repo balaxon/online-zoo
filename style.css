@@ -130,11 +130,44 @@
 
 .cards-box {
   position: relative;
-  left: 0;
+  left: -1189px;
+  display: flex;
+  gap: 30px;
+  width: 3537px;
+  transition: 1s;
+}
+
+.cards-box-non-click {
+  pointer-events: none;
+}
+
+@keyframes move-left {
+  0% {left: -1189px;}
+  100% {left: 0;}
+}
+
+.cards-box-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+@keyframes move-right {
+  0% {left: -1189px;}
+  100% {left: -2378px;}
+}
+
+.cards-box-right {
+  animation-name: move-right;
+  animation-duration: 1s;
+}
+
+.slider-left,
+.slider-center,
+.slider-right {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 30px;
-  width: 1554px;
+  width: 1159px;
 }
 
 .cards-box-buttons {
@@ -179,6 +212,16 @@
 
 .cards-box-btn-right:active {
   background-image: url(assets/icons/arrow-right.svg), linear-gradient(113.96deg, #4B9200 1.49%, #4B9200 101.44%);
+  transform: scale(1);
+}
+
+.cards-box-btn-left:disabled {
+  background-image: url(../../assets/icons/arrow-left.svg), linear-gradient(113.96deg, #9c9c9c 1.49%, #9c9c9c 101.44%);
+  transform: scale(1);
+}
+
+.cards-box-btn-right:disabled {
+  background-image: url(../../assets/icons/arrow-right.svg), linear-gradient(113.96deg, #9c9c9c 1.49%, #9c9c9c 101.44%);
   transform: scale(1);
 }
 
@@ -445,14 +488,18 @@
 
 .testimonials-slider {
   overflow: hidden;
+  position: relative;
+  height: 390px;
   padding: 1px;
 }
 
 .testimonials-cards {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-  flex-basis: 268px;
   gap: 29px;
-  width: 1758px;
+  transition: 0.5s;
 }
 
 .card-back {
@@ -543,7 +590,7 @@ input[type=range]  {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 36px;
-  width: 115.19px;
+  width: 12.5%;
   height: 6px;
   background: #FE9013;
   border-radius: 5px;
@@ -552,6 +599,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-webkit-slider-thumb:hover {
   background: #F9804B;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background: #4B9200;
 }
 
 input[type="range"]::-webkit-slider-thumb:active {
@@ -584,6 +635,69 @@ input[type=range]::-webkit-slider-runnable-track {
 .testimonials_feedback_button {
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border-radius: 5px;
+}
+
+.testimonials-popup {
+  z-index: 700;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding-left: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.testimonials-popup-box {
+  width: 264px;
+  height: 387px;
+  padding: 2px;
+  background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+  box-shadow: 0 0 100px 0 black;
+  border-radius: 20px;
+}
+
+.testimonials-popup .testimonial-card {
+  height: 100%;
+  padding-bottom: 0;
+}
+
+.testimonials-popup .testimonial-card-text {
+  max-height: 308px
+}
+
+.testimonials-popup-button {
+  z-index: 700;
+  position: relative;
+  top: -194px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../../assets/icons/x_icon_orange.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.testimonials-popup-button:hover {
+  transform: scale(1.1);
+}
+
+.testimonials-popup-button:active {
+  transform: scale(1);
 }
 
 /*----------------------------------------media----------------------------------------*/
@@ -651,11 +765,37 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
   .cards-box {
+      position: relative;
+      left: -970px;
+      display: flex;
+      gap: 30px;
+      width: 2880px;
+      transition: 1s;
+  }
+  
+  @keyframes move-left {
+      0% {left: -970px;}
+      100% {left: 0;}
+  }
+  
+  
+  @keyframes move-right {
+      0% {left: -970px;}
+      100% {left: -1940px;}
+  }
+  
+  
+  .slider-left,
+  .slider-center,
+  .slider-right {
+      display: flex;
+      flex-wrap: wrap;
       gap: 92px 30px;
-      width: 1262px;
+      width: 940px;
   }
 
   .cards-box-buttons {
+      z-index: 200;
       top: 369px;
       left: 323px;
       display: flex;
@@ -746,7 +886,7 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
   input[type="range"]::-webkit-slider-thumb {
-      width: 75px;
+      width: 12.5%;
   }
 
   .footer-subscribe-box {
@@ -838,6 +978,37 @@ input[type=range]::-webkit-slider-runnable-track {
 
   .pets-box {
       gap: 59px;
+  }
+
+  .cards-box {
+      position: relative;
+      left: -630px;
+      display: flex;
+      gap: 30px;
+      width: 2880px;
+      transition: 1s;
+  }
+  
+  @keyframes move-left {
+      0% {left: -630px;}
+      100% {left: 0;}
+  }
+  
+  
+  @keyframes move-right {
+      0% {left: -630px;}
+      100% {left: -1260px;}
+  }
+  
+  
+  .slider-left,
+  .slider-center,
+  .slider-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 92px 30px;
+      width: 600px;
+      height: 756px;
   }
 
   .cards-box-buttons {
@@ -1064,11 +1235,26 @@ input[type=range]::-webkit-slider-runnable-track {
   }
 
   .cards-box {
-      top: 0;
+      position: relative;
       left: 0;
+      display: flex;
+      gap: 30px;
+      width: 2880px;
+      transition: 1s;
+  }
+  
+  .slider-center {
+      display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
       gap: 20px;
-      width: 100%;
+      width: 287px;
+      height: 1388px;
+  }
+
+  .slider-left,
+  .slider-right {
+      display: none;
   }
 
   .cards-box-buttons {
@@ -1171,4 +1357,14 @@ input[type=range]::-webkit-slider-runnable-track {
       height: 357px;
       margin-bottom: 20px;
   }
+}
+
+/*----------------------------------------js-classes----------------------------------------*/
+
+.popup-shown {
+  opacity: 1;
+}
+
+.displayed {
+  pointer-events: all;
 }

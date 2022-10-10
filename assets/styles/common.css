@@ -120,6 +120,9 @@ header {
     background-position: 4px 12px;
     background-repeat: no-repeat;
     background-size: 15%;
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.3s;
 }
 
 .nav-wrapper {
@@ -217,6 +220,19 @@ nav {
 
 .burger-open {
     left: 0;
+}
+
+.page-fade {
+    position: fixed;
+    z-index: 300;
+    top: 34px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
 }
 
 
@@ -649,4 +665,17 @@ form:valid .footer_email_button:active {
 
 .burger-x {
     background-image: url(../../assets/icons/burger_opened.svg);
+}
+
+.logo-fader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-fader {
+    opacity: 1;
+}
+
+.displayed {
+    pointer-events: all;
 }
