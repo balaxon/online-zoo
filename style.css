@@ -683,7 +683,7 @@ input[type=range]::-webkit-slider-runnable-track {
   left: 10px;
   width: 14px;
   height: 14px;
-  background-image: url(../../assets/icons/x_icon_orange.svg);
+  background-image: url(assets/icons/x_icon_orange.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
