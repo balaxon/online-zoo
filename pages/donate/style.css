@@ -160,6 +160,25 @@ header {
     height: 10px;
     background: #FFEE2E;
     border-radius: 50%;
+    transition: 0.2s;
+}
+
+.range-point-active {
+    position: relative;
+    outline: 2px solid #FE9013;
+    outline-offset: 5px;
+}
+
+.range-point-active::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border-radius: 50%;
+    outline: 2px solid #FE9013;
+    outline-offset: 13px;
 }
 
 input[type="range"] {
@@ -176,9 +195,6 @@ input[type="range"]::-webkit-slider-thumb {
     height: 21px;
     width: 21px;
     background: transparent;
-    border: 2px solid #FE9013;
-    outline: 2px solid #FE9013;
-    outline-offset: 8.52px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -647,6 +663,18 @@ input[type="radio"]:checked {
         width: 5px;
         height: 5px;
     }
+
+    .range-point-active {
+        outline: 1px solid #FE9013;
+        outline-offset: 2px;
+    }
+    
+    .range-point-active::after {
+        width: 5px;
+        height: 5px;
+        outline: 1px solid #FE9013;
+        outline-offset: 6px;
+    }
     
     input[type="range"] {
         margin: -21px 15px 0 14px;
@@ -655,9 +683,6 @@ input[type="radio"]:checked {
     input[type="range"]::-webkit-slider-thumb {
         height: 11.5px;
         width: 11.5px;
-        border: 1px solid #FE9013;
-        outline: 1px solid #FE9013;
-        outline-offset: 4px;
     }
 
     .feed-days-range-dollars {
@@ -695,4 +720,4 @@ input[type="radio"]:checked {
         margin-left: -1px;
     }
 
-}   
+}

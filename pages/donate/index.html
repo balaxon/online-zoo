@@ -45,6 +45,7 @@
     </header>
     <main>
         <section class="header-filler"></section>
+        <section class="page-fade"></section>
         <section class="page-logo"></section>
         <section class="donate">
             <div class="wrapper">
@@ -104,7 +105,7 @@
                                     <li class="range-point5"></li>
                                 </ul>
                             </div>
-                            <input class="donate-range-input" type="range" min="0" max="7" value="2">
+                            <input class="donate-range-input range-invisible" type="range" min="0" max="7" value="5">
                             <ul class="feed-days-range-dollars range-dollars-desktop range-disabled">
                                 <li class="feed-days-range-donate-summ range-summ1">
                                     <div class="feed-days-range-dollar-logo">$</div>
@@ -193,7 +194,7 @@
                             </ul>
                             <div class="feed-days-selfsumm-box">
                                 <div class="feed-days-selfsumm-container">
-                                    <input type="number" min="1" max="9999" placeholder="Another amount" id="selfsumm-box">
+                                    <input class="self-sum-input" type="number" min="1" max="9999" maxlength="4" placeholder="Another amount" id="selfsumm-box" required>
                                     <label for="selfsumm-box" class="feed-days-selfsumm-dollar">$</label>
                                 </div>
                             </div>
